@@ -1,6 +1,5 @@
-import { ViewGridIcon } from '@heroicons/react/solid';
+import { ViewGridIcon } from '@heroicons/react/outline';
 import Avatar from './Avatar';
-import Image from 'next/image';
 
 function Header() {
   return (
@@ -19,14 +18,6 @@ function Header() {
           <Avatar url="/jeff.jpg" />
         </div>
       </header>
-      <form action="">
-        <Image
-          src="/jeff.jpg"
-          height={300}
-          width={300}
-          className="rounded-full"
-        />
-      </form>
     </>
   );
 }
