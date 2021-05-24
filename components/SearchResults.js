@@ -1,4 +1,7 @@
+import PaginationButtons from './PaginationButtons';
+
 function SearchResults({ results }) {
+  console.log(results);
   return (
     <div className="mx-auto w-full px-3 sm:pl-5 md:pl-10 lg:pl-52">
       <p className="text-gray-600 text-md mb-5 mt-3">
@@ -8,10 +11,19 @@ function SearchResults({ results }) {
 
       {results.items?.map((result) => (
         <div key={result.link} className="max-w-xl mb-8">
-          <div></div>
-          <p>{result.snippit}</p>
+          <div className="group">
+            <a href={result.link}> {result.formattedUrl}</a>
+            <a href={result.link}>
+              {' '}
+              <h2 className="truncate text-xl text-blue-800 font-medium group-hover:underline">
+                {result.title}
+              </h2>
+            </a>
+            <p className="line-clamp-2">{result.snippet}</p>
+          </div>
         </div>
       ))}
+      <PaginationButtons />
     </div>
   );
 }
